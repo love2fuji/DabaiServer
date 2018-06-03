@@ -48,6 +48,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxServerPort = new System.Windows.Forms.TextBox();
+            this.checkBoxSaveData = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.tabConServerLog.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -161,9 +162,9 @@
             this.tpgRegion.Margin = new System.Windows.Forms.Padding(4);
             this.tpgRegion.Name = "tpgRegion";
             this.tpgRegion.Padding = new System.Windows.Forms.Padding(4);
-            this.tpgRegion.Size = new System.Drawing.Size(1934, 1109);
+            this.tpgRegion.Size = new System.Drawing.Size(1179, 1376);
             this.tpgRegion.TabIndex = 1;
-            this.tpgRegion.Text = "区域/部门基础数据";
+            this.tpgRegion.Text = "通讯数据";
             this.tpgRegion.UseVisualStyleBackColor = true;
             // 
             // dgvShowRegion
@@ -179,7 +180,7 @@
             this.dgvShowRegion.Name = "dgvShowRegion";
             this.dgvShowRegion.RowHeadersWidth = 50;
             this.dgvShowRegion.RowTemplate.Height = 23;
-            this.dgvShowRegion.Size = new System.Drawing.Size(1926, 1101);
+            this.dgvShowRegion.Size = new System.Drawing.Size(1171, 1368);
             this.dgvShowRegion.TabIndex = 0;
             // 
             // tpgDepart
@@ -189,7 +190,7 @@
             this.tpgDepart.Margin = new System.Windows.Forms.Padding(4);
             this.tpgDepart.Name = "tpgDepart";
             this.tpgDepart.Padding = new System.Windows.Forms.Padding(4);
-            this.tpgDepart.Size = new System.Drawing.Size(1934, 1109);
+            this.tpgDepart.Size = new System.Drawing.Size(1179, 1376);
             this.tpgDepart.TabIndex = 2;
             this.tpgDepart.Text = " ";
             this.tpgDepart.UseVisualStyleBackColor = true;
@@ -205,7 +206,7 @@
             this.dgvShowDepart.Name = "dgvShowDepart";
             this.dgvShowDepart.RowHeadersWidth = 10;
             this.dgvShowDepart.RowTemplate.Height = 23;
-            this.dgvShowDepart.Size = new System.Drawing.Size(1926, 1101);
+            this.dgvShowDepart.Size = new System.Drawing.Size(1171, 1368);
             this.dgvShowDepart.TabIndex = 0;
             // 
             // 退出ToolStripMenuItem1
@@ -237,6 +238,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxSaveData);
             this.groupBox1.Controls.Add(this.textBoxServerPort);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnStop);
@@ -259,6 +261,17 @@
             this.textBoxServerPort.Size = new System.Drawing.Size(100, 28);
             this.textBoxServerPort.TabIndex = 23;
             this.textBoxServerPort.Text = "9099";
+            // 
+            // checkBoxSaveData
+            // 
+            this.checkBoxSaveData.AutoSize = true;
+            this.checkBoxSaveData.Location = new System.Drawing.Point(829, 53);
+            this.checkBoxSaveData.Name = "checkBoxSaveData";
+            this.checkBoxSaveData.Size = new System.Drawing.Size(106, 22);
+            this.checkBoxSaveData.TabIndex = 24;
+            this.checkBoxSaveData.Text = "保存日志";
+            this.checkBoxSaveData.UseVisualStyleBackColor = true;
+            this.checkBoxSaveData.CheckedChanged += new System.EventHandler(this.checkBoxSaveData_CheckedChanged);
             // 
             // Main
             // 
@@ -305,6 +318,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxServerPort;
+        private System.Windows.Forms.CheckBox checkBoxSaveData;
     }
 }
 

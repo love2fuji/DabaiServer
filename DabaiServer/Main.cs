@@ -24,12 +24,16 @@ namespace DabaiServer
         static TimerX _timer;
         static NetServer _server;
         static Int32 _serverPort;
-        
+
 
         private void Main_Load(object sender, EventArgs e)
         {
             Runtime.ServerLog = this.ServerLog;
-            _serverPort =Convert.ToInt32(textBoxServerPort.Text);
+            Runtime.m_IsSaveData = true;
+
+            checkBoxSaveData.Checked = true;
+
+            _serverPort = Convert.ToInt32(textBoxServerPort.Text);
         }
 
         static void TestServer()
@@ -69,7 +73,6 @@ namespace DabaiServer
                 Thread WorkerThread = new Thread(TestServer);
                 WorkerThread.Start();
                 Runtime.ShowLog("*** 启动服务成功***  监听端口号：" + _serverPort);
-
             }
             catch (Exception ex)
             {
@@ -86,9 +89,17 @@ namespace DabaiServer
             _server.Stop("手动停止服务...");
             Runtime.ShowLog("*** 停止服务成功***  详细：手动停止服务...");
         }
+
+        private void checkBoxSaveData_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSaveData.Checked)
+            {
+                Runtime.m_IsSaveData = true;
+            }
+            else
+            {
+                Runtime.m_IsSaveData = false;
+            }
+        }
     }
-
-   
-
-    
 }

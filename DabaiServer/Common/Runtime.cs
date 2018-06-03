@@ -10,7 +10,7 @@ namespace DabaiServer.Common
     class Runtime
     {
         public static bool m_IsRunning;
-        public static bool m_IsRefreshToken;
+        public static bool m_IsSaveData;
         public static RichTextBox ServerLog;
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace DabaiServer.Common
                 string s = "";
                 for (int i = 0; i < Runtime.ServerLog.Lines.Length; i++)
                 {
-                    if (i > 2000)
+                    if (i > 50)
                         break;
                     s += ("\r\n" + Runtime.ServerLog.Lines[i]);
                 }

@@ -30,9 +30,13 @@ namespace DabaiServer
         /// <param name="e"></param>
         protected override void OnReceive(ReceivedEventArgs e)
         {
-            WriteLog("收到客户端 ->{0}:{1} 的数据：{2}", e.Remote.Address, e.Remote.Port, e.Packet.ToStr());
+            if (Runtime.m_IsSaveData)
+            {
+                WriteLog("收到客户端->{0}:{1} 的数据：{2}", e.Remote.Address, e.Remote.Port, e.Packet.ToStr());
+            }
+            //WriteLog("收到客户端 ->{0}:{1} 的数据：{2}", e.Remote.Address, e.Remote.Port, e.Packet.ToStr());
             //WriteLog("收到：{0}", e.Packet.ToStr());
-            Runtime.ShowLog(string.Format("收到客户端 ->{0}:{1} 的数据：{2}", e.Remote.Address, e.Remote.Port, e.Packet.ToStr()));
+            Runtime.ShowLog(string.Format("收到客户端->{0}:{1} 的数据：{2}", e.Remote.Address, e.Remote.Port, e.Packet.ToStr()));
             // 把收到的数据发回去
             Send(e.Packet);
         }
